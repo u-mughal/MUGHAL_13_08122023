@@ -1,19 +1,25 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import './Layout.css';
 
 const Layout = () => {
-  return (
-      <div className="layout">
-          <Header />
-          <main>
-              <Outlet />
-          </main>
-          <Footer />
-      </div>
-  )
-}
+    const location = useLocation(); // Obtenez l'URL actuelle
 
-export default Layout
+    // Vérifiez si l'URL est "/user" pour décider si la classe "bg-dark" doit être ajoutée
+    const isUserPage = location.pathname === '/Login';
+    const mainClass = isUserPage ? 'bg-dark' : '';
+
+    return (
+        <div className="layout">
+            <Header />
+            <main className={mainClass}>
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
+    );
+};
+
+export default Layout;
