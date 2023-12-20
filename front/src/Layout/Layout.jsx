@@ -8,8 +8,9 @@ const Layout = () => {
     const location = useLocation(); // Obtenez l'URL actuelle
 
     // Vérifiez si l'URL est "/user" pour décider si la classe "bg-dark" doit être ajoutée
-    const isUserPage = location.pathname === '/Login';
-    const mainClass = isUserPage ? 'bg-dark' : '';
+    const isUserPage = location.pathname === '/user';
+    const isLoginPage = location.pathname === '/Login';
+    const mainClass = isUserPage || isLoginPage ? 'bg-dark' : '';
 
     return (
         <div className="layout">

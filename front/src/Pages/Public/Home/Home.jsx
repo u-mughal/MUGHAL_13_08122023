@@ -1,6 +1,6 @@
 import Features from "../../../Components/Features/Features"
 import Hero from "../../../Components/Hero/Hero";
-import datafeatures from "../../../Assets/Api/Featuresjson.json"
+import datafeatures from "../../../Assets/Api/Featuresinfo.json"
 
 const Home = () => {
     return (
