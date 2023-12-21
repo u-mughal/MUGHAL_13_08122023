@@ -1,6 +1,6 @@
-import Account from "../../../Components/Account/Account";
-import UserIntro from "../../../Components/UserIntro/UserIntro"
-import dataaccount from "../../../Assets/Api/accountinfo.json";
+import Account from "@/Components/Account/Account";
+import UserIntro from "@/Components/UserIntro/UserIntro"
+import dataaccount from "@/Assets/Api/accountinfo.json";
 
 const User = () => {
     return (

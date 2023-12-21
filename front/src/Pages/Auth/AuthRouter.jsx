@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import Error from "../Error";
+import Error from "@/Pages/Error";
 import Login from "./Login";
 
 const AuthRouter = () => {

@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Layout from '../../Layout/Layout'
-import User from '../Admin/User/User';
+import Layout from '@/Layout/Layout'
+import User from '@/Pages/Admin/User/User';
 import { Home, Error, Login } from './Index'
 
 const PublicRouter = () => {

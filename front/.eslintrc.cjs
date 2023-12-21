@@ -7,6 +7,9 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
+  globals: {
+    __dirname: 'readonly', // Autorisez __dirname en tant que variable globale en lecture seule
+  },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
