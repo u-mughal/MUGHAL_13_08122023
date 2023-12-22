@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.9",
+    "axios": "^1.6.2",
     "craco-alias": "^3.0.1",
     "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.1",
