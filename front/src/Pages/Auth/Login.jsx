@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import 'font-awesome/css/font-awesome.min.css';
 import './Login.css'
 import { useState } from "react";
-import axios from "axios";
 import { accountService } from "@/_Services/AccountService";
 
 const Login = () => {
@@ -25,12 +24,11 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(credentials);
-        axios.post('http://localhost:3001/api/v1/user/login', credentials)
+        accountService.login(credentials)
             .then(res => {
                 console.log(res)
                 accountService.saveToken(res.data.acces_token)
-                navigate('/user')
+                navigate('/user', {replace: true})
             })
             .catch(error => console.log(error))
     }
