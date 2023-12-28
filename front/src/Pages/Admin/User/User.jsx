@@ -1,16 +1,34 @@
+import { useEffect, useState } from "react";
 import Account from "@/Components/Account/Account";
 import UserIntro from "@/Components/UserIntro/UserIntro"
-import dataaccount from "@/Assets/Api/accountinfo.json";
+import { userService } from "@/_Services/UserService.jsx";
 
 const User = () => {
+    const [userData, setUserData] = useState(null);
+
+    // Je déclenche l'appel au compte du client connecté au moment de l'affichage du composant
+    useEffect(() => {
+        userService.getUser("user01") // Remplacez "user01" par l'ID de l'utilisateur que vous souhaitez récupérer
+            .then((res) => setUserData(res))
+            .catch((err) => console.log(err));
+    }, []);
+
     return (
         <>
-        <UserIntro />
-        {
-            dataaccount.map((value) =>
-            <Account key={value.id} title={value.titleAccount} total={value.totalAccount} type={value.typeOfAccount} />
-            )
-        }
+            <UserIntro />
+            {userData && (
+                <div key={userData.userId}>
+                    <h2>User ID: {userData.userId}</h2>
+                    {userData.account.map((account) => (
+                        <Account
+                            key={account.id}
+                            title={account.titleAccount}
+                            total={account.totalAccount}
+                            type={account.typeOfAccount}
+                        />
+                    ))}
+                </div>
+            )}
         </>
     );
 };
