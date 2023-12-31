@@ -1,0 +1,63 @@
+.header {
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.edit-button:hover {
+  background-color: #fff;
+  color: #00bc77;
+}
+
+.editNameContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headerUserContentSave,
+.headerUserContentCancel {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0.5rem;
+}
+
+.headerUserContentSave {
+  align-items: flex-end;
+}
+
+.headerUserContentCancel {
+  align-items: flex-start;
+}
+
+.headerUserContentSave input,
+.headerUserContentCancel input {
+  margin: 0.5rem 0;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.secondary-button {
+  background-color: #fff;
+  border: 2px solid #00bc77;
+  padding: 10px;
+  width: fit-content;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.secondary-button:hover {
+  background-color: #00bc77;
+  color: #fff;
+}

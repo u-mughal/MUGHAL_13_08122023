@@ -2,10 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from '@/assets/images/argentBankLogo.png';
 import 'font-awesome/css/font-awesome.min.css';
 import { accountService } from '@/_Services/AccountService.jsx'
+import { useSelector } from 'react-redux'
 
 import './Header.css'
 
 const Header = () => {
+
+    const par = useSelector(state => state.Login);
+
     // Obtenez l'URL actuelle
     const location = useLocation();
 
@@ -23,7 +27,7 @@ const Header = () => {
                 <div>
                     {isUserPage ? (
                         <>
-                        <Link className="main-nav-item" to="/"><i className="fa fa-user-circle"></i> Pedrolito </Link>
+                        <Link className="main-nav-item" to="/"><i className="fa fa-user-circle"></i> {par.firstName} </Link>
                         <Link className="main-nav-item" to="/home" onClick={logout}><i className="fa fa-sign-out"></i> Sign out </Link>
                         </>
                     ) : (

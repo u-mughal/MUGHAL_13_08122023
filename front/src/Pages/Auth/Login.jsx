@@ -3,16 +3,20 @@ import 'font-awesome/css/font-awesome.min.css';
 import './Login.css'
 import { useState } from "react";
 import { accountService } from "@/_Services/AccountService";
+import { useSelector } from 'react-redux'
 
 const Login = () => {
+
+    const par = useSelector(state => state.Auth);
+    console.log(par);
 
     let navigate = useNavigate();
     // const [login, setLogin] = useState('');
     // const [password, setPassword] = useState('');
 
     const [credentials, setCredentials] = useState({
-        email: 'tony@stark.com',
-        password: 'password123'
+        email: '',
+        password: ''
     })
 
     const onChange = (e) => {

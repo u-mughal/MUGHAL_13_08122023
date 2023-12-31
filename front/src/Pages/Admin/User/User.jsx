@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Account from "@/Components/Account/Account";
-import UserIntro from "@/Components/UserIntro/UserIntro"
+import UserHeader from "@/Components/UserHeader/UserHeader"
 import { userService } from "@/_Services/UserService.jsx";
 
 const User = () => {
@@ -15,7 +15,7 @@ const User = () => {
 
     return (
         <>
-            <UserIntro />
+            <UserHeader />
             {userData && (
                 <div key={userData.userId}>
                     <h2>User ID: {userData.userId}</h2>
