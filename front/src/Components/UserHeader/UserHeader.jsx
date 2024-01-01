@@ -19,7 +19,7 @@ const UserHeader = () => {
         e.preventDefault();
         dispatch({
             type: "Login/changeFirstName",
-            payload: editedFirstName // Met à jour le prénom dans le Redux Store
+            payload: editedFirstName
         });
         setEditButton(false);
     }
