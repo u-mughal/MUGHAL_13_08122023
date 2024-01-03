@@ -1,72 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
+import auth_service from '@/_Services/AccountService';
+
 import "./UserHeader.css"
 
 const UserHeader = () => {
-    const firstName = useSelector(state => state.Login.firstName);
-    // const lastName = useSelector(state => state.Login.lastName);
+    const user= useSelector((state)=> state.user);
+    const firstName= useSelector((state) => state.user.firstName);
+    const lastName= useSelector((state) => state.user.lastName);
+    const [edit, showEdit] = useState(false);
     const dispatch = useDispatch();
-
-    const [editButton, setEditButton] = useState(false);
-    const [editedFirstName, setEditedFirstName] = useState(""); // État local pour stocker le prénom en cours d'édition
-
-    const editNameButton = () => {
-        setEditedFirstName(firstName);
-        setEditButton(true);
+    const token= useSelector((state)=> state.login.token);
+    const [newFirstName, setFirstName] = useState('');
+    const [newLastName, setLastName] =  useState('');
+  
+    const submit=(e)=>{
+      e.preventDefault()
+      dispatch(auth_service.updateProfile(newFirstName,newLastName,token));
+      showEdit(false);
     }
-
-    const saveNameButton = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: "Login/changeFirstName",
-            payload: editedFirstName
-        });
-        setEditButton(false);
-    }
-
-    const cancelEdit = () => {
-        setEditButton(false);
-    }
-
+  
+    useEffect(()=>{
+      if(token !==null ){
+        dispatch(auth_service.userProfile(token))
+      }
+    },[token, dispatch])
+  
     return (
-        <div className="header">
-            {editButton ? (
-                <form className="editNameContent">
-                    <div className="headerUserContentSave">
-                        <input
-                            className="InputfirstName"
-                            type="text"
-                            placeholder="Ex: Tony"
-                            name="firstName"
-                            required
-                            value={editedFirstName} // Affiche la valeur en cours d'édition
-                            onChange={(e) => setEditedFirstName(e.target.value)}
-                        />
-                        <button className="secondary-button" onClick={saveNameButton}>
-                            Save
-                        </button>
-                    </div>
-                    <div className="headerUserContentCancel">
-                        <input
-                            className="inputLastName"
-                            type="text"
-                            placeholder="Ex: Jarvis"
-                            name="lastName"
-                            required
-                        />
-                        <button className="secondary-button" onClick={cancelEdit}>
-                            Cancel
-                        </button>
-                    </div>
-                </form>
-            ) : (
-                <>
-                    <h1>Welcome back <br /> {firstName} (non connecté à API)</h1>
-                    <button className="edit-button" onClick={editNameButton}>Edit Name</button>
-                </>
-            )}
-        </div>
-    );
-};
-
-export default UserHeader;
+      <div className="header">
+          <h1>Welcome back<br />{edit === false ? firstName + ' ' + lastName : ""}</h1>
+          {
+            edit === false ? 
+              <button className="edit-name-button" onClick={()=>{showEdit(true)}}>Edit Name</button> 
+            : 
+            <form className='edit-inputs-buttons' onSubmit={submit}>
+              <div className='edit-inputs'>
+                <input type="text" className='edit-input' onChange={(e)=>{setFirstName(e.target.value)}} placeholder={user.firstName} required/>
+                <input type="text" className='edit-input' onChange={(e)=>{setLastName(e.target.value)}} placeholder={user.lastName} required/>
+              </div>
+              <div className='edit-buttons'>
+                <button className='edit-button-option' type='submit'>Save</button>
+                <button className='edit-button-option' onClick={()=>{showEdit(false)}}>Cancel</button>
+              </div>
+            </form>
+          }
+      </div>
+    )
+  }
+  
+  export default UserHeader

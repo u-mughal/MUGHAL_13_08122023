@@ -3,7 +3,7 @@
   margin-bottom: 2rem;
 }
 
-.edit-button {
+.edit-name-button {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
@@ -13,51 +13,35 @@
   transition: all 0.3s ease-in-out;
 }
 
-.edit-button:hover {
+.edit-name-button:hover {
   background-color: #fff;
   color: #00bc77;
 }
 
-.editNameContent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.headerUserContentSave,
-.headerUserContentCancel {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0.5rem;
-}
-
-.headerUserContentSave {
-  align-items: flex-end;
-}
-
-.headerUserContentCancel {
-  align-items: flex-start;
-}
-
-.headerUserContentSave input,
-.headerUserContentCancel input {
-  margin: 0.5rem 0;
+.edit-input {
+  margin: 0.5rem;
   height: 32px;
   border-radius: 4px;
+  padding: 0 1rem;
 }
 
-.secondary-button {
+.edit-buttons {
+  margin: 0.5rem;
+}
+
+.edit-button-option {
   background-color: #fff;
+  margin: 0 0.5rem;
   border: 2px solid #00bc77;
   padding: 10px;
-  width: fit-content;
+  width: 80px;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
-.secondary-button:hover {
+.edit-button-option:hover {
   background-color: #00bc77;
   color: #fff;
 }
