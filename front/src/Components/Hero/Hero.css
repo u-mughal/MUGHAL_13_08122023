@@ -1,3 +1,4 @@
+/* Styles pour la section héros (hero) */
 .hero {
   background-image: url("../../Assets/Images/bank-tree.jpeg");
   background-position: 0 -50px;
@@ -7,6 +8,7 @@
   position: relative;
 }
 
+/* Styles pour le contenu de la section héros (hero-content) */
 .hero-content {
   position: relative;
   top: 2rem;
@@ -17,23 +19,28 @@
   margin: 0 auto;
 }
 
+/* Styles pour le sous-titre du contenu de la section héros */
 .hero-content .subtitle {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
 }
 
+/* Styles pour le texte du contenu de la section héros */
 .hero-content .text {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
 
+/* Media query pour les écrans de largeur minimale de 920px */
 @media (min-width: 920px) {
+  /* Ajustements pour les écrans plus larges */
   .hero {
     height: 400px;
     background-position: 0% 33%;
   }
 
+  /* Ajustements pour le contenu de la section héros sur les écrans plus larges */
   .hero-content {
     position: absolute;
     top: 50px;
@@ -42,10 +49,12 @@
     margin: 2rem;
   }
 
+  /* Ajustements pour le sous-titre du contenu sur les écrans plus larges */
   .hero-content .subtitle {
     font-size: 1.5rem;
   }
 
+  /* Ajustements pour le texte du contenu sur les écrans plus larges */
   .hero-content .text {
     font-size: 1.2rem;
   }

@@ -1,13 +1,16 @@
+/* Styles pour la section des fonctionnalités (features) */
 .features {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Style Flex: Les éléments sont empilés en colonne */
 }
 
+/* Styles pour chaque élément de fonctionnalité (feature-item) */
 .feature-item {
-  flex: 1;
+  flex: 1; /* Chaque élément occupe autant d'espace disponible */
   padding: 2.5rem;
 }
 
+/* Styles pour l'icône de la fonctionnalité (feature-icon) */
 .feature-icon {
   width: 100px;
   border: 10px solid #00bc77;
@@ -15,6 +18,7 @@
   padding: 1rem;
 }
 
+/* Styles pour le titre de l'élément de fonctionnalité (feature-item-title) */
 .feature-item-title {
   color: #222;
   font-size: 1.25rem;
@@ -22,8 +26,9 @@
   margin-bottom: 0.5rem;
 }
 
+/* Media query pour les écrans de largeur minimale de 920px */
 @media (min-width: 920px) {
   .features {
-      flex-direction: row;
+    flex-direction: row; /* Réorganise les éléments en ligne pour les écrans plus larges */
   }
 }

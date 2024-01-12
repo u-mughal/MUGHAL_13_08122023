@@ -1,3 +1,4 @@
+/* Styles pour le composant de compte (Account) */
 .account {
   display: flex;
   justify-content: space-between;
@@ -6,23 +7,26 @@
   background-color: #fff;
   width: 80%;
   margin: 0 auto;
-  flex-direction: column;
+  flex-direction: column; /* Style Flex: Les éléments sont empilés en colonne par défaut */
   padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
 }
 
+/* Styles pour la quantité du compte (montant total) */
 .account-amount {
   margin: 0;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
+/* Styles pour la description du montant du compte */
 .account-amount-description {
   margin: 0;
 }
 
+/* Styles pour le titre du compte */
 .account-title {
   margin: 0;
   padding: 0;
@@ -30,11 +34,13 @@
   font-weight: normal;
 }
 
+/* Styles pour l'emballage du contenu du compte */
 .account-content-wrapper {
   width: 100%;
   flex: 1;
 }
 
+/* Styles pour le bouton d'édition */
 .edit-button {
   border-color: #00bc77;
   background-color: #00bc77;
@@ -43,6 +49,7 @@
   padding: 10px;
 }
 
+/* Styles pour le bouton de transactions */
 .transaction-button {
   display: block;
   width: 100%;
@@ -55,16 +62,17 @@
   color: #fff;
 }
 
+/* Media query pour les écrans de largeur minimale de 720px */
 @media (min-width: 720px) {
   .account {
-      flex-direction: row;
+    flex-direction: row; /* Réorganise les éléments en ligne pour les écrans plus larges */
   }
 
   .account-content-wrapper.cta {
-      flex: 0;
+    flex: 0; /* Réduit la flexibilité de l'emballage du contenu avec la classe cta */
   }
 
   .transaction-button {
-      width: 200px;
+    width: 200px; /* Largeur spécifique pour le bouton de transactions sur les écrans plus larges */
   }
 }

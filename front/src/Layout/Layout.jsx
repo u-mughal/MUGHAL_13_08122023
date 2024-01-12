@@ -4,6 +4,11 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import './Layout.css';
 
+/**
+ * Composant représentant la mise en page générale de l'application.
+ * @component
+ * @returns {JSX.Element} - Le composant Layout.
+ */
 const Layout = () => {
     const location = useLocation(); // Obtenez l'URL actuelle
 
@@ -15,6 +20,7 @@ const Layout = () => {
     return (
         <div className="layout">
             <Header />
+            {/* Zone de rendu pour les composants enfants définis dans les routes */}
             <main className={mainClass}>
                 <Outlet />
             </main>

@@ -1,8 +1,10 @@
+/* Styles pour l'en-tête (header) */
 .header {
   color: #fff;
   margin-bottom: 2rem;
 }
 
+/* Styles pour le bouton d'édition de nom */
 .edit-name-button {
   border-color: #00bc77;
   background-color: #00bc77;
@@ -13,11 +15,13 @@
   transition: all 0.3s ease-in-out;
 }
 
+/* Styles au survol du bouton d'édition de nom */
 .edit-name-button:hover {
   background-color: #fff;
   color: #00bc77;
 }
 
+/* Styles pour l'élément d'édition de l'entrée de nom */
 .edit-input {
   margin: 0.5rem;
   height: 32px;
@@ -25,10 +29,12 @@
   padding: 0 1rem;
 }
 
+/* Styles pour les boutons d'édition */
 .edit-buttons {
   margin: 0.5rem;
 }
 
+/* Styles pour les options de bouton d'édition */
 .edit-button-option {
   background-color: #fff;
   margin: 0 0.5rem;
@@ -41,6 +47,7 @@
   transition: all 0.3s ease-in-out;
 }
 
+/* Styles au survol des options de bouton d'édition */
 .edit-button-option:hover {
   background-color: #00bc77;
   color: #fff;
